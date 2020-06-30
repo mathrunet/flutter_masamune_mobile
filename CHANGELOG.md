@@ -1,3 +1,7 @@
+## [0.1.2] - Update README (2020.06.30)
+
+* Added LocalMedia.
+
 ## [0.1.1] - Update README (2020.06.09)
 
 * Upgrade permission_handler.
