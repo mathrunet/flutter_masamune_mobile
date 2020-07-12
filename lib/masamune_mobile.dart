@@ -16,6 +16,7 @@ import 'package:masamune_core/masamune_core.dart';
 import 'package:device_info/device_info.dart';
 import 'package:package_info/package_info.dart';
 export 'package:masamune_core/masamune_core.dart';
+export 'package:image_picker/image_picker.dart';
 
 part 'asset/localmedia.dart';
 part 'utility/mobileconfig.dart';
