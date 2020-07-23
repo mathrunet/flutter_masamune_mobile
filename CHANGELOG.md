@@ -1,3 +1,7 @@
+## [0.3.0] - Update README (2020.07.24)
+
+* Synchronize with core updates.
+
 ## [0.1.2] - Update README (2020.06.30)
 
 * Added LocalMedia.
