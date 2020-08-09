@@ -155,7 +155,7 @@ packages:
       name: masamune_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.0"
+    version: "0.4.0"
   masamune_localize:
     dependency: transitive
     description:
@@ -349,7 +349,7 @@ packages:
       name: sprintf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.2"
+    version: "4.1.0"
   stack_trace:
     dependency: transitive
     description:
