@@ -6,9 +6,9 @@ class LocalMedia extends AssetUnit<File> {
   File _file;
   Uint8List _bytes;
 
-  /// Media type.
-  MediaType get mediaType => this._mediaType;
-  MediaType _mediaType;
+  /// Asset media type.
+  AssetType get assetType => this._assetType;
+  AssetType _assetType;
 
   /// Get the file.
   File get file => this._file;
@@ -30,7 +30,7 @@ class LocalMedia extends AssetUnit<File> {
   /// [isTemporary]: True if the data is temporary.
   @override
   T createInstance<T extends IClonable>(String path, bool isTemporary) =>
-      LocalMedia._(path, this.mediaType) as T;
+      LocalMedia._(path, this.assetType) as T;
 
   /// Get image from camera or library by path.
   ///
@@ -45,11 +45,11 @@ class LocalMedia extends AssetUnit<File> {
     }
     LocalMedia unit = PathMap.get<LocalMedia>(path);
     if (unit != null) {
-      unit._mediaType = MediaType.image;
+      unit._assetType = AssetType.image;
       unit._load();
       return unit.future;
     }
-    unit = LocalMedia._(path, MediaType.image);
+    unit = LocalMedia._(path, AssetType.image);
     unit._pickImage();
     return unit.future;
   }
@@ -67,11 +67,11 @@ class LocalMedia extends AssetUnit<File> {
     }
     LocalMedia unit = PathMap.get<LocalMedia>(path);
     if (unit != null) {
-      unit._mediaType = MediaType.video;
+      unit._assetType = AssetType.video;
       unit._load();
       return unit.future;
     }
-    unit = LocalMedia._(path, MediaType.video);
+    unit = LocalMedia._(path, AssetType.video);
     unit._load();
     return unit.future;
   }
@@ -90,13 +90,13 @@ class LocalMedia extends AssetUnit<File> {
     }
     LocalMedia unit = PathMap.get<LocalMedia>(path);
     if (unit != null) {
-      unit._mediaType = MediaType.image;
+      unit._assetType = AssetType.image;
       unit._pickImage(
         source: source,
       );
       return unit.future;
     }
-    unit = LocalMedia._(path, MediaType.image);
+    unit = LocalMedia._(path, AssetType.image);
     unit._pickImage(
       source: source,
     );
@@ -119,13 +119,13 @@ class LocalMedia extends AssetUnit<File> {
     }
     LocalMedia unit = PathMap.get<LocalMedia>(path);
     if (unit != null) {
-      unit._mediaType = MediaType.video;
+      unit._assetType = AssetType.video;
       unit._pickVideo(
         source: source,
       );
       return unit.future;
     }
-    unit = LocalMedia._(path, MediaType.video);
+    unit = LocalMedia._(path, AssetType.video);
     unit._pickVideo(
       source: source,
     );
@@ -157,8 +157,8 @@ class LocalMedia extends AssetUnit<File> {
     if (file != null) file.delete();
   }
 
-  LocalMedia._(String path, MediaType mediaType)
-      : this._mediaType = mediaType,
+  LocalMedia._(String path, AssetType mediaType)
+      : this._assetType = mediaType,
         super(path: path, isTemporary: false, order: 10, group: 0);
 
   void _pickImage({ImageSource source}) async {
@@ -215,13 +215,4 @@ class LocalMedia extends AssetUnit<File> {
     this._bytes = null;
     super.dispose();
   }
-}
-
-/// The type of media.
-enum MediaType {
-  /// Image.
-  image,
-
-  /// Video.
-  video
 }
