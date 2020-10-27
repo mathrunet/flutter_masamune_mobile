@@ -2,12 +2,12 @@ name: masamune_mobile
 description: >-
   Library that provides mobile functions of Masamune framework.
   Does not work on the web.
-version: 0.5.0
+version: 0.5.1
 homepage: https://mathru.net
 repository: https://github.com/mathrunet/flutter_masamune_mobile
 
 environment:
-  sdk: ">=2.6.0 <3.0.0"
+  sdk: ">=2.8.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -28,7 +28,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   # Masamune
-  masamune_test: ^0.1.0
+  masamune_test: ^0.5.0
 
 # dependency_overrides:
 #   masamune_core:
