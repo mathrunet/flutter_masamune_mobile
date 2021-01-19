@@ -2,7 +2,7 @@ name: masamune_mobile
 description: >-
   Library that provides mobile functions of Masamune framework.
   Does not work on the web.
-version: 0.6.1
+version: 0.6.2
 homepage: https://mathru.net
 repository: https://github.com/mathrunet/flutter_masamune_mobile
 
@@ -21,6 +21,7 @@ dependencies:
   package_info: ^0.4.0+13
   image_picker: ^0.6.7+2
   # Masamune
+  masamune: ^0.6.0
   masamune_core: ^0.6.0
   masamune_flutter: ^0.6.0
 
