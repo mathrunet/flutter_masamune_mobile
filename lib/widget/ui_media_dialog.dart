@@ -63,10 +63,18 @@ class UIMediaDialog {
       selected: cameraLabel.localize(),
       selectors: {
         cameraLabel.localize(): () {
-          res = localMedia.video(source: ImageSource.camera);
+          if (assetType == AssetType.image) {
+            res = localMedia.image(source: ImageSource.camera);
+          } else {
+            res = localMedia.video(source: ImageSource.camera);
+          }
         },
         libraryLabel.localize(): () {
-          res = localMedia.video(source: ImageSource.gallery);
+          if (assetType == AssetType.image) {
+            res = localMedia.image(source: ImageSource.gallery);
+          } else {
+            res = localMedia.video(source: ImageSource.gallery);
+          }
         }
       },
       title: title,
