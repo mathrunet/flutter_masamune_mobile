@@ -1,6 +1,6 @@
 name: masamune_mobile
 description: Library that provides mobile functions of Masamune framework. Does not work on the web.
-version: 0.8.0-nullsafety.8
+version: 0.8.0-nullsafety.9
 homepage: https://mathru.net
 repository: https://github.com/mathrunet/flutter_masamune_mobile
 
@@ -13,8 +13,7 @@ dependencies:
     sdk: flutter
 
   masamune: ^0.8.0-nullsafety
-  firebase_model_notifier: ^0.8.0-nullsafety
-  image_picker: ^0.7.0
+  image_picker: ^0.7.2
   device_info: ^2.0.0
   package_info: ^2.0.0
 
