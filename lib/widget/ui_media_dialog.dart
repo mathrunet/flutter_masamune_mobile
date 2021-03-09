@@ -37,7 +37,6 @@ class UIMediaDialog {
       default:
         await UISelectDialog.show(
           context,
-          selected: imageLabel.localize(),
           selectors: {
             imageLabel.localize(): () {
               assetType = AssetType.image;
@@ -60,7 +59,6 @@ class UIMediaDialog {
         "${Config.temporaryDirectory.path}/$uuid.${assetType == AssetType.video ? "mp4" : "jpg"}"));
     await UISelectDialog.show(
       context,
-      selected: cameraLabel.localize(),
       selectors: {
         cameraLabel.localize(): () {
           if (assetType == AssetType.image) {
